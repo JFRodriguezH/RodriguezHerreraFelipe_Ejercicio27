@@ -1,11 +1,29 @@
-implicit.png : prueba.py implicit.dat
+explicit.png : prueba.py explicit_1.dat explicit_01.dat explicit_001.dat
 	python prueba.py
 	
-implicit.dat : implicit.out
-	./implicit.out
+explicit_1.dat : prueba.out
+	./prueba.out
+    
+explicit_01.dat : prueba.out
+	./prueba.out
+	
+explicit_001.dat : prueba.out
+	./prueba.out
+	
+implicit.png : prueba.py implicit_1.dat implicit_01.dat implicit_001.dat
+	python prueba.py
+	
+implicit_1.dat : prueba.out
+	./prueba.out
+    
+implicit_01.dat : prueba.out
+	./prueba.out
+	
+implicit_001.dat : prueba.out
+	./prueba.out
 
-implicit.out : prueba.cpp
-	c++ prueba.cpp -o implicit.out
+prueba.out : prueba.cpp
+	c++ prueba.cpp -o prueba.out
 	
 clear : 
-	rm implicit.dat implicit.png implicit.out
+	rm explicit_1.dat explicit_01.dat explicit_001.dat explicit.png implicit_1.dat implicit_01.dat implicit_001.dat implicit.png prueba.out
