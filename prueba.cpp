@@ -5,7 +5,7 @@ using namespace std;
 /* f(x,y) = -w * y */
 
 
-float const w = 4;
+float const w = 0.1;
 float const t_0 = 0;
 float const y_0 = 1;
 
@@ -26,6 +26,7 @@ int main(){
         t += delta;
         y = expl(y, wDelta);
     }
+	outfile << delta << " " << 0 << endl;
     outfile.close();
 	
 	t = t_0;
@@ -37,6 +38,7 @@ int main(){
         t += delta;
         y = impl(y, wDelta);
     }
+	outfile << delta << " " << 0 << endl;
     outfile.close();
     
     wDelta = 0.01;
@@ -51,6 +53,7 @@ int main(){
         t += delta;
         y = expl(y, wDelta);
     }
+	outfile << delta << " " << 0 << endl;
     outfile.close();
 	
 	t = t_0;
@@ -62,6 +65,7 @@ int main(){
         t += delta;
         y = impl(y, wDelta);
     }
+	outfile << delta << " " << 0 << endl;
     outfile.close();
     
     wDelta = 1;
@@ -76,6 +80,7 @@ int main(){
         t += delta;
         y = expl(y, wDelta);
     }
+	outfile << delta << " " << 0 << endl;
     outfile.close();
 	
 	t = t_0;
@@ -87,22 +92,8 @@ int main(){
         t += delta;
         y = impl(y, wDelta);
     }
-    outfile.close();
-    
-    wDelta = 1.5;
-    n = (4-w*t_0)/wDelta;
-    t = t_0;
-    y = y_0;
-	delta = wDelta/w;
-    
-    outfile.open("explicit_15.dat");
-    for(int i=0; i<n+1; i++){
-        outfile << t << " " << y <<endl;
-        t += delta;
-        y = expl(y, wDelta);
-    }
-    outfile.close();    
-    
+	outfile << delta << " " << 0 << endl;
+    outfile.close(); 
     return 0;
 }
 
