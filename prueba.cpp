@@ -88,6 +88,21 @@ int main(){
         y = impl(y, wDelta);
     }
     outfile.close();
+    
+    wDelta = 1.5;
+    n = (4-w*t_0)/wDelta;
+    t = t_0;
+    y = y_0;
+	delta = wDelta/w;
+    
+    outfile.open("explicit_15.dat");
+    for(int i=0; i<n+1; i++){
+        outfile << t << " " << y <<endl;
+        t += delta;
+        y = expl(y, wDelta);
+    }
+    outfile.close();    
+    
     return 0;
 }
 
@@ -102,17 +117,3 @@ float impl(float y_n, float wDelta){
 	y_m = y_n/(1+wDelta);
 	return y_m;
 }
-/*
-void ejemplo_escribe(string filename){
-  ofstream outfile;
-
-
-  outfile.open(filename);
-
-  cout << "Escribiendo en " << filename << endl; 
-  for (int i=0; i < 10; i++){
-    outfile << i << endl;
-  }
-  outfile.close(); 
-}
-*/

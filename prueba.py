@@ -3,9 +3,11 @@ import matplotlib.pyplot as plt
 
 plt.figure()
 data_1 = np.loadtxt("explicit_1.dat")
+data_15 = np.loadtxt("explicit_15.dat")
 data_01 = np.loadtxt("explicit_01.dat")
 data_001 = np.loadtxt("explicit_001.dat")
 plt.plot(data_1[:,0], data_1[:,1])
+plt.plot(data_15[:,0], data_15[:,1])
 plt.plot(data_01[:,0], data_01[:,1])
 plt.plot(data_001[:,0], data_001[:,1])
 plt.axis('square')
